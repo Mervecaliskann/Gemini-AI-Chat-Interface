@@ -13,14 +13,14 @@ genai.configure(api_key=my_key)
 # Model başlatma
 model = genai.GenerativeModel('gemini-2.5-flash')
 
-def generate_response(user_prompt):  # Parametre adını değiştirdik
+def generate_response(user_prompt):  
     try:
-        # Kullanıcının gönderdiği prompt'u kullan, sabit metin yerine
+        
         response = model.generate_content(
-            user_prompt,  # Sabit "Mevsimler neden oluşur?" yerine kullanıcı girdisi
+            user_prompt,  
             generation_config=genai.GenerationConfig(
-                temperature=0.7,  # Biraz yaratıcılık ekledik
-                max_output_tokens=2048,  # Token limitini artırdık
+                temperature=0.7,  
+                max_output_tokens=2048,  # Token limitini artır
                 top_p=0.8,
                 top_k=40
             )
